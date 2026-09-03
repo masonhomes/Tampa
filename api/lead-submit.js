@@ -97,6 +97,16 @@ module.exports = async function handler(req, res) {
       notes:    body.message || body.notes || body.details || null,
     };
 
+    // DEBUG: PGRST125 diagnosis — remove after root cause found
+    console.log('[lead-submit-debug] SUPABASE_URL length:',
+      process.env.SUPABASE_URL?.length);
+    console.log('[lead-submit-debug] SUPABASE_URL last char code:',
+      process.env.SUPABASE_URL?.charCodeAt(process.env.SUPABASE_URL.length - 1));
+    console.log('[lead-submit-debug] Full fetch URL:',
+      `${process.env.SUPABASE_URL}/rest/v1/leads`);
+    console.log('[lead-submit-debug] Has SERVICE_ROLE_KEY:',
+      !!process.env.SUPABASE_SERVICE_ROLE_KEY);
+
     const supaRes = await fetch(`${url}/rest/v1/leads`, {
       method: 'POST',
       headers: {
