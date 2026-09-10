@@ -5,50 +5,36 @@
   <url>
     <loc>https://masonhomesconstruction.com/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
   </url>
 
   <!-- Showroom -->
   <url>
     <loc>https://masonhomesconstruction.com/showroom/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>
 
   <!-- Gallery -->
   <url>
     <loc>https://masonhomesconstruction.com/gallery/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
 
   <!-- Case Studies -->
   <url>
     <loc>https://masonhomesconstruction.com/case-studies/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/case-studies/mediterranean-luxury-remodel/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/case-studies/screened-outdoor-living/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/case-studies/cbs-custom-home/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
 
 
@@ -56,236 +42,160 @@
   <url>
     <loc>https://masonhomesconstruction.com/services/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/services/kitchen-remodeling/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/services/bathroom-remodeling/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/services/whole-home-renovation/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/services/home-additions/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/services/custom-home-building/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/services/adu-accessory-dwelling-units/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/services/flooring-installation/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/services/countertop-installation/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
 
   <!-- Location Pages (Tier 1) -->
   <url>
     <loc>https://masonhomesconstruction.com/locations/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/locations/tampa/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/locations/south-tampa/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/locations/carrollwood/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/locations/brandon/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/locations/wesley-chapel/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/locations/st-petersburg/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/locations/clearwater/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/locations/riverview/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
 
   <!-- Service x Location Combo Pages -->
   <url>
     <loc>https://masonhomesconstruction.com/kitchen-remodeling-south-tampa/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/bathroom-remodeling-st-petersburg/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/kitchen-remodeling-clearwater/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/home-remodeling-brandon/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/kitchen-remodeling-brandon/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/bathroom-remodeling-clearwater/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/home-remodeling-wesley-chapel/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/kitchen-remodeling-carrollwood/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/home-remodeling-riverview/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/bathroom-remodeling-south-tampa/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/home-remodeling-new-tampa/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/home-remodeling-largo/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
 
   <!-- Cost Guide Pages -->
   <url>
     <loc>https://masonhomesconstruction.com/cost-guides/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/cost-guides/kitchen-remodel-cost-tampa/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/cost-guides/bathroom-remodel-cost-tampa/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/cost-guides/home-addition-cost-tampa/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/cost-guides/countertop-installation-cost-tampa/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/cost-guides/flooring-installation-cost-tampa/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/cost-guides/custom-home-cost-per-sq-ft-tampa/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/cost-guides/adu-construction-cost-tampa/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.8</priority>
   </url>
 
   <!-- Case Study Pages — removed 2026-04-27, will re-add when client provides content -->
@@ -294,166 +204,122 @@
   <url>
     <loc>https://masonhomesconstruction.com/about/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/process/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/contact/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/free-estimate/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/privacy-policy/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/terms-of-service/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
   </url>
 
   <!-- Blog Hub -->
   <url>
     <loc>https://masonhomesconstruction.com/blog/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
 
   <!-- Blog Posts -->
   <url>
     <loc>https://masonhomesconstruction.com/blog/tampa-building-permit-guide/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/blog/florida-adu-law-2024/</loc>
     <lastmod>2026-09-03</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/blog/quartz-vs-granite-tampa/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/blog/best-flooring-for-florida-humidity/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/blog/lvp-vs-tile-florida/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/blog/kitchen-remodel-roi-tampa/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/blog/can-you-live-in-home-during-remodel/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/blog/best-time-to-remodel-tampa/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/blog/tampa-hoa-renovation-rules/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/blog/open-concept-kitchen-remodel-tampa/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/blog/what-to-look-for-tampa-remodeling-contractor/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/blog/how-to-choose-custom-home-builder-tampa/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/blog/permits-for-home-additions-hillsborough-county/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/blog/tampa-flood-zone-building-requirements/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://masonhomesconstruction.com/blog/kitchen-cabinet-refacing-vs-replacement/</loc>
     <lastmod>2026-07-18</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.7</priority>
   </url>
 
 
   <!-- New Location Pages (April 2026 expansion) -->
   <!-- Hillsborough -->
-  <url><loc>https://masonhomesconstruction.com/locations/counties/hillsborough/</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://masonhomesconstruction.com/locations/new-tampa/</loc><lastmod>2026-07-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://masonhomesconstruction.com/locations/westchase/</loc><lastmod>2026-07-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://masonhomesconstruction.com/locations/lutz/</loc><lastmod>2026-07-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://masonhomesconstruction.com/locations/plant-city/</loc><lastmod>2026-07-18</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://masonhomesconstruction.com/locations/apollo-beach/</loc><lastmod>2026-07-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://masonhomesconstruction.com/locations/valrico/</loc><lastmod>2026-07-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://masonhomesconstruction.com/locations/sun-city-center/</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://masonhomesconstruction.com/locations/counties/hillsborough/</loc><lastmod>2026-09-03</lastmod></url>
+  <url><loc>https://masonhomesconstruction.com/locations/new-tampa/</loc><lastmod>2026-07-18</lastmod></url>
+  <url><loc>https://masonhomesconstruction.com/locations/westchase/</loc><lastmod>2026-07-18</lastmod></url>
+  <url><loc>https://masonhomesconstruction.com/locations/lutz/</loc><lastmod>2026-07-18</lastmod></url>
+  <url><loc>https://masonhomesconstruction.com/locations/plant-city/</loc><lastmod>2026-07-18</lastmod></url>
+  <url><loc>https://masonhomesconstruction.com/locations/apollo-beach/</loc><lastmod>2026-07-18</lastmod></url>
+  <url><loc>https://masonhomesconstruction.com/locations/valrico/</loc><lastmod>2026-07-18</lastmod></url>
+  <url><loc>https://masonhomesconstruction.com/locations/sun-city-center/</loc><lastmod>2026-09-03</lastmod></url>
   <!-- Pinellas -->
-  <url><loc>https://masonhomesconstruction.com/locations/counties/pinellas/</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://masonhomesconstruction.com/locations/dunedin/</loc><lastmod>2026-07-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://masonhomesconstruction.com/locations/largo/</loc><lastmod>2026-07-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://masonhomesconstruction.com/locations/pinellas-park/</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://masonhomesconstruction.com/locations/counties/pinellas/</loc><lastmod>2026-09-03</lastmod></url>
+  <url><loc>https://masonhomesconstruction.com/locations/dunedin/</loc><lastmod>2026-07-18</lastmod></url>
+  <url><loc>https://masonhomesconstruction.com/locations/largo/</loc><lastmod>2026-07-18</lastmod></url>
+  <url><loc>https://masonhomesconstruction.com/locations/pinellas-park/</loc><lastmod>2026-09-03</lastmod></url>
   <!-- Pasco -->
-  <url><loc>https://masonhomesconstruction.com/locations/counties/pasco/</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://masonhomesconstruction.com/locations/land-o-lakes/</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://masonhomesconstruction.com/locations/new-port-richey/</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://masonhomesconstruction.com/locations/odessa/</loc><lastmod>2026-07-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://masonhomesconstruction.com/locations/counties/pasco/</loc><lastmod>2026-09-03</lastmod></url>
+  <url><loc>https://masonhomesconstruction.com/locations/land-o-lakes/</loc><lastmod>2026-09-03</lastmod></url>
+  <url><loc>https://masonhomesconstruction.com/locations/new-port-richey/</loc><lastmod>2026-09-03</lastmod></url>
+  <url><loc>https://masonhomesconstruction.com/locations/odessa/</loc><lastmod>2026-07-18</lastmod></url>
   <!-- Manatee -->
-  <url><loc>https://masonhomesconstruction.com/locations/counties/manatee/</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://masonhomesconstruction.com/locations/bradenton/</loc><lastmod>2026-07-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://masonhomesconstruction.com/locations/counties/manatee/</loc><lastmod>2026-09-03</lastmod></url>
+  <url><loc>https://masonhomesconstruction.com/locations/bradenton/</loc><lastmod>2026-07-18</lastmod></url>
   <!-- Sarasota -->
-  <url><loc>https://masonhomesconstruction.com/locations/counties/sarasota/</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://masonhomesconstruction.com/locations/sarasota/</loc><lastmod>2026-07-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://masonhomesconstruction.com/locations/counties/sarasota/</loc><lastmod>2026-09-03</lastmod></url>
+  <url><loc>https://masonhomesconstruction.com/locations/sarasota/</loc><lastmod>2026-07-18</lastmod></url>
 
 </urlset>
