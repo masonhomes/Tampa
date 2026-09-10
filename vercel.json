@@ -5,6 +5,9 @@
   "installCommand": null,
   "outputDirectory": "site",
   "cleanUrls": true,
+  "crons": [
+    { "path": "/api/keepalive", "schedule": "0 12 * * *" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
