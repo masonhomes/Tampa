@@ -73,6 +73,83 @@ document.addEventListener('keydown', function(e){
   }
 });
 
+// -------- Lead submission with Formspree fallback (shared) --------
+// Primary: POST /api/lead-submit (writes to Supabase + fires server-side
+//   Formspree notification). 8-second timeout.
+// Fallback: if primary times out or returns non-ok, POST direct to
+//   Formspree from the browser so the lead still reaches the client's
+//   email even during a Supabase / Vercel Function outage. 6-second
+//   timeout on the fallback.
+// Resolves { channel: 'primary'|'fallback', id? } on success.
+// Rejects if BOTH channels fail — caller should surface "call us" UX.
+var FORMSPREE_URL = 'https://formspree.io/f/mljenlqj';
+
+function mhSubmitLead(payload){
+  var enriched = Object.assign({}, payload, {
+    page: payload.page || window.location.pathname
+  });
+
+  return tryFetch('/api/lead-submit', enriched, 8000, false)
+    .then(function(res){
+      if(res && res.ok !== false){
+        return { channel: 'primary', id: res.id || null };
+      }
+      // Primary responded but with { ok: false } — fall through
+      return submitFallback(enriched, 'primary returned ok:false');
+    })
+    .catch(function(err){
+      // Timeout / network / non-2xx from primary
+      return submitFallback(enriched, err && err.message || 'primary failed');
+    });
+}
+
+function submitFallback(enriched, reason){
+  var source = enriched._form_source || enriched.source || enriched['form-name'] || 'unknown';
+  var name = enriched.name || '(no name)';
+  var fsPayload = Object.assign({}, enriched, {
+    _subject: 'New lead (browser fallback) — ' + source + ' — ' + name,
+    _replyto: enriched.email || undefined,
+    fallback_reason: reason,
+    submitted_at: new Date().toISOString()
+  });
+
+  return tryFetch(FORMSPREE_URL, fsPayload, 6000, true)
+    .then(function(){ return { channel: 'fallback' }; });
+}
+
+// Fetch with AbortController timeout. Resolves parsed JSON on 2xx, throws
+// otherwise. When acceptAnyJson=true, resolves on any 2xx without parsing
+// (Formspree returns {ok:true} but content-type varies).
+function tryFetch(url, body, timeoutMs, acceptAnyJson){
+  return new Promise(function(resolve, reject){
+    var ctrl = ('AbortController' in window) ? new AbortController() : null;
+    var timeoutId = setTimeout(function(){
+      if(ctrl) ctrl.abort();
+      reject(new Error('timeout after ' + timeoutMs + 'ms'));
+    }, timeoutMs);
+
+    fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(body),
+      signal: ctrl ? ctrl.signal : undefined
+    })
+      .then(function(r){
+        clearTimeout(timeoutId);
+        if(!r.ok) throw new Error(url + ' returned HTTP ' + r.status);
+        if(acceptAnyJson) return { ok: true };
+        return r.json().catch(function(){ return { ok: true }; });
+      })
+      .then(resolve)
+      .catch(function(err){
+        clearTimeout(timeoutId);
+        reject(err);
+      });
+  });
+}
+
+window.mhSubmitLead = mhSubmitLead; // exposed for testing / manual use
+
 // -------- CHAT WIDGET --------
 var chatModal = makeModal('chat-modal',
     '<div class="chat-header">'
@@ -194,20 +271,15 @@ function askNext(){
 
 function submitChat(){
   addBotMsg("One moment — I'm getting a real person notified for you...", function(){
-    // Submit to Supabase via the /api/lead-submit Vercel function
     var payload = Object.assign({}, chatState.answers, {
       'form-name': 'mason-chat',
       _form_source: 'chat_widget',
       source: 'chat_widget',
       page: window.location.pathname
     });
-    fetch('/api/lead-submit', {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify(payload)
-    })
+    mhSubmitLead(payload)
       .then(function(){ showChatSuccess(); })
-      .catch(function(){ showChatSuccess(); }); // still show success — user has our number
+      .catch(function(){ showChatError(); }); // both channels failed
   });
 }
 
@@ -221,6 +293,17 @@ function showChatSuccess(){
   chatBody.appendChild(wrap);
   // clear localStorage
   localStorage.removeItem('mh_chat_state');
+}
+
+function showChatError(){
+  chatBody.innerHTML = '';
+  chatChips.innerHTML = '';
+  chatInputRow.style.display = 'none';
+  var wrap = document.createElement('div');
+  wrap.className = 'chat-success';
+  wrap.innerHTML = '<div class="icon" style="background:#c04a3c">!</div><h3>Please call <em>directly</em>.</h3><p>Something went wrong sending your message. Reach us right away — we\'ll take your project details over the phone:</p><a href="tel:+18139995910">(813) 999-5910 &rarr;</a>';
+  chatBody.appendChild(wrap);
+  // Do NOT clear localStorage — user may want to retry with same answers
 }
 
 function startChat(){
@@ -333,13 +416,14 @@ document.addEventListener('click', function(e){
 
 // -------- Site-wide form submit handler --------
 // Any <form data-submit-endpoint="/api/lead-submit"> is intercepted here,
-// serialized to JSON and POSTed to Supabase via the Vercel function.
+// serialized to JSON and pushed through mhSubmitLead which handles the
+// primary /api/lead-submit → Supabase path plus a Formspree browser
+// fallback if the primary fails or times out.
 document.addEventListener('submit', function(e){
   var form = e.target;
   if(!form.matches || !form.matches('form[data-submit-endpoint]')) return;
   e.preventDefault();
 
-  var endpoint = form.dataset.submitEndpoint;
   var successMsg = form.dataset.successMessage || 'Thank you — we’ll follow up shortly.';
   var button = form.querySelector('button[type="submit"],input[type="submit"]');
   var originalLabel = button ? button.innerHTML : null;
@@ -347,25 +431,15 @@ document.addEventListener('submit', function(e){
 
   var data = {};
   new FormData(form).forEach(function(v, k){ data[k] = v; });
-  data.page = data.page || window.location.pathname;
 
-  fetch(endpoint, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
-  })
-    .then(function(r){ return r.json().catch(function(){ return { ok:false }; }); })
-    .then(function(res){
-      if(res && res.ok){
-        showFormSuccess(form, successMsg);
-      } else {
-        if(button){ button.disabled = false; button.innerHTML = originalLabel; }
-        alert('Sorry — that didn’t go through. Please call (813) 999-5910 or try again.');
-      }
+  mhSubmitLead(data)
+    .then(function(){
+      showFormSuccess(form, successMsg);
     })
     .catch(function(){
+      // Both primary and Formspree fallback failed
       if(button){ button.disabled = false; button.innerHTML = originalLabel; }
-      alert('Sorry — network issue. Please call (813) 999-5910 or try again.');
+      alert('Sorry — that didn’t go through. Please call (813) 999-5910 or try again.');
     });
 });
 
