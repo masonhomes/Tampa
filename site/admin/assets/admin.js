@@ -1,30 +1,17 @@
 /* ================================================================
    MASON HOMES ADMIN — CRM Core JS
-   Auth gate, localStorage data model, seed data, rendering helpers.
+   localStorage data model, seed data, rendering helpers.
    Data model is Supabase-ready — see /admin/data-model.md
+
+   Authentication is enforced at the Vercel Edge Middleware layer
+   (see /middleware.js). By the time any code here runs, the request
+   has already passed HTTP Basic Auth against the ADMIN_USER +
+   ADMIN_PASSWORD env vars. No client-side auth gate is needed and
+   no password lives in this file.
    ================================================================ */
 
 (function(){
 'use strict';
-
-// ---------- AUTH (client-side prototype only, NOT secure) ----------
-const AUTH_KEY = 'mh_admin_auth';
-const AUTH_PASSWORD = 'mason2026'; // change in /admin/settings/ once persisted
-
-function isAuthed(){
-  const v = sessionStorage.getItem(AUTH_KEY);
-  return v && (Date.now() - parseInt(v,10)) < 8 * 60 * 60 * 1000; // 8h session
-}
-function authenticate(pw){
-  if(pw === (localStorage.getItem('mh_admin_password') || AUTH_PASSWORD)){
-    sessionStorage.setItem(AUTH_KEY, String(Date.now()));
-    return true;
-  }
-  return false;
-}
-function logout(){ sessionStorage.removeItem(AUTH_KEY); location.href = '/admin/'; }
-
-window.mhAuth = { isAuthed, authenticate, logout };
 
 // ---------- DATA MODEL (localStorage; mirrors Supabase schema) ----------
 const DB_KEY = 'mh_admin_db_v1';
@@ -61,7 +48,6 @@ function seedIfEmpty(){
       hours:'Mon – Sat · 8a – 6p',
       contingency_default_pct:10,
       trades_labor_rate_hr:52,
-      admin_password_hint:'mason2026',
     },
   };
 
@@ -204,36 +190,10 @@ function initials(name){
 
 window.mhFmt = { money:fmtMoney, moneyFull:fmtMoneyFull, date:fmtDate, dateShort:fmtDateShort, relative:fmtRelative, initials };
 
-// ---------- LOGIN + BOOT ----------
-function renderLogin(){
-  document.body.className = 'login-body';
-  document.body.innerHTML = ''
-    + '<div class="login-screen">'
-    +   '<form class="login-card" id="login-form">'
-    +     '<div class="logo">MASON HOMES</div>'
-    +     '<div class="eyebrow">Admin · CRM</div>'
-    +     '<h1>Welcome <em>back</em>.</h1>'
-    +     '<label for="pw">Passcode</label>'
-    +     '<input type="password" id="pw" autocomplete="current-password" required autofocus/>'
-    +     '<div class="error" id="err" style="display:none">Incorrect passcode. Try again.</div>'
-    +     '<button type="submit" class="btn-primary"><span>Enter Dashboard</span></button>'
-    +     '<div class="hint">Prototype build · Passcode: <code>mason2026</code></div>'
-    +   '</form>'
-    + '</div>';
-  document.getElementById('login-form').addEventListener('submit', function(e){
-    e.preventDefault();
-    const pw = document.getElementById('pw').value;
-    if(authenticate(pw)){
-      location.reload();
-    } else {
-      document.getElementById('err').style.display = 'block';
-      document.getElementById('pw').value = '';
-      document.getElementById('pw').focus();
-    }
-  });
-}
-
 // ---------- LAYOUT (sidebar + topbar) ----------
+// Note: no client-side login screen. HTTP Basic Auth is enforced at
+// /middleware.js before any admin asset is served, so by the time this
+// file runs, the visitor is already authenticated.
 function currentPath(){
   const p = location.pathname.replace(/^\/admin\//, '').replace(/\/$/, '');
   if(!p || p === 'index.html') return 'dashboard';
@@ -323,9 +283,14 @@ function renderLayout(pageKey, title, actions){
 
 // ---------- BOOT ----------
 window.mhBoot = function(pageKey, title, mount){
-  if(!isAuthed()){ renderLogin(); return; }
   document.body.innerHTML = '<div class="admin">' + renderLayout(pageKey, title) + '</div>';
-  document.getElementById('logout-link').addEventListener('click', function(e){ e.preventDefault(); logout(); });
+  // "Logout" for HTTP Basic Auth: browsers manage the credential cache,
+  // so the cleanest exit is navigating off the admin. Closing the tab
+  // fully clears the cached credentials.
+  document.getElementById('logout-link').addEventListener('click', function(e){
+    e.preventDefault();
+    location.href = '/';
+  });
   mount(document.getElementById('content'));
 };
 

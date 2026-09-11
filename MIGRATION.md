@@ -117,7 +117,7 @@ Recommendation for tomorrow: **Option A** to get launched quickly, then plan Opt
 | `vercel.json`             | Vercel build + headers + cache config. Equivalent of the old `netlify.toml`. |
 | `api/leads.js`            | Vercel serverless function that powers `/api/leads` (admin CRM lead sync). |
 | `site/`                   | The static site (what gets served). Every URL under the domain maps to a file here. |
-| `site/admin/`             | Password-protected admin CRM prototype (client-side only). Password: `mason2026`. Excluded from `robots.txt`. |
+| `site/admin/`             | Admin CRM prototype. Protected by HTTP Basic Auth at the Vercel Edge Middleware layer (see `/middleware.js`) — requires `ADMIN_USER` + `ADMIN_PASSWORD` env vars set on Vercel Production. Excluded from `robots.txt`. |
 | `site/admin/data-model.md`| Supabase migration plan for when the CRM moves off localStorage. |
 | `netlify.toml`, `netlify/functions/` | Old Netlify config, kept for reference. Ignored by Vercel. |
 
@@ -128,7 +128,7 @@ Recommendation for tomorrow: **Option A** to get launched quickly, then plan Opt
 - [ ] `https://<project>.vercel.app/` loads the homepage
 - [ ] `https://<project>.vercel.app/services/kitchen-remodeling/` loads (trailing slash routing works)
 - [ ] `https://<project>.vercel.app/gallery/` loads (large image page, verify no broken images)
-- [ ] `https://<project>.vercel.app/admin/` prompts for password (`mason2026`)
+- [ ] `https://<project>.vercel.app/admin/` shows an HTTP Basic Auth prompt (browser-native dialog). Credentials from `ADMIN_USER` + `ADMIN_PASSWORD` env vars.
 - [ ] `https://<project>.vercel.app/api/leads` returns JSON — either `{configured: true, leads: [...]}` or `{configured: false, message: "..."}`
 - [ ] View the page source of the homepage — verify `<script type="application/ld+json">` blocks are still present (Organization, WebSite, FAQPage schema)
 - [ ] Check `robots.txt` and `sitemap.xml` at the root — should return 200 OK with expected content
