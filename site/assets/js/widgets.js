@@ -445,9 +445,16 @@ document.addEventListener('submit', function(e){
 
 function showFormSuccess(form, msg){
   var note = document.createElement('div');
-  note.style.cssText = 'padding:20px 22px;background:rgba(200,98,60,.08);border-left:3px solid var(--bronze,#c8623c);border-radius:2px;font-family:"Inter",sans-serif;font-size:15px;color:var(--charcoal,#1a1814);line-height:1.55;margin:12px 0';
-  note.innerHTML = '<strong style="display:block;margin-bottom:6px;font-family:\'JetBrains Mono\',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze,#c8623c);font-weight:500">Received</strong>' + msg;
+  // Solid warm-white fill so the note is readable over the hero photo
+  // on the homepage form. Copper left border kept for brand continuity.
+  note.style.cssText = 'padding:22px 24px;background:#faf6ed;border:1px solid rgba(31,29,26,.12);border-left:3px solid var(--bronze,#c8623c);border-radius:2px;font-family:"Inter",sans-serif;font-size:15px;color:#1a1814;line-height:1.55;margin:12px 0;box-shadow:0 20px 50px -24px rgba(20,17,13,.35),0 2px 6px rgba(20,17,13,.08)';
+  note.setAttribute('role', 'status');
+  note.setAttribute('aria-live', 'polite');
+  note.innerHTML = '<strong style="display:block;margin-bottom:6px;font-family:\'JetBrains Mono\',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#a44e2d;font-weight:500">Received</strong>' + msg;
   form.replaceWith(note);
+  // Center in viewport so above-the-fold forms still show confirmation,
+  // and the note clears the fixed header + announce bar.
+  try { note.scrollIntoView({ block: 'center', behavior: 'smooth' }); } catch (_e) { note.scrollIntoView(); }
 }
 
 })();
